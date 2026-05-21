@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: rag
+
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: http://langchain4j.dev/demo/openai/v1
+      api-key: demo
+      model-name: gpt-4o-mini
+      max-tokens: 1000
+      temperature: 0.0
+      log-requests: true
+      log-response: true
+
+
+pgvector:
+  host: localhost
+  port: 5432
+  database: ragdb
+  user: raguser
+  password: ragpass
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.langchain: DEBUG
+    dev.langchain4j: INFO
