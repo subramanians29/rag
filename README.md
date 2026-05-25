@@ -1,3 +1,18 @@
+# What's and Why's
+I have experience with building models with python during my master's, but since i wanted to focus more on using the models with existing enterprise solutions, 
+i wanted to build a program which provides answers user queries based on the documents that were ingested in java, two popular framework options were spring ai and langchain4j, Both were interesting,
+but i found langchain4j to be more easy to configure, spring ai has a lot of abstractions which is good if i just want to connect 
+to a llm framework and was already working in a spring heavy platform, but since this is a simple learning project i decided to 
+go with langchain4j. I chose pgvector over standalone vector databases like Pinecone because this project runs entirely locally — pgvector runs inside the existing PostgreSQL container with no external service or API key needed. For a production system handling millions of embeddings I would evaluate a dedicated vector database, but for a self-contained demo pgvector is the pragmatic choice.
+
+Had the Help of Claude sonnet 4.6 in writing this, for exploring different options in langchain4j, as i am trying to explore more on
+AI Assisted(or AI centric) Coding.
+
+Initially my prompt was to draft a high level plan for this project which uses everything locally in a simple way, 
+and i did no other changes till it gave me the full working code. 
+
+I rewrote the code (Copied it manually line by line) to understand what the ai had given me, and i didn't feel the need to change anything.
+
 # RAG REST API
 
 A Retrieval-Augmented Generation (RAG) REST API you can run entirely on your local machine — no cloud, no paid API keys.
